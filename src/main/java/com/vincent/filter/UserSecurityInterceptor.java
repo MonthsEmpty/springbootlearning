@@ -6,6 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.OutputStream;
 
 /**
  * Created by dell on 2017/4/11.
@@ -14,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 public class UserSecurityInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
-        System.out.println("interceptor====");
+        System.out.println("preHandle====");
         return true;
     }
 
@@ -25,6 +26,7 @@ public class UserSecurityInterceptor implements HandlerInterceptor {
 
     @Override
     public void afterCompletion(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) throws Exception {
-
+        httpServletResponse.getOutputStream();
+        System.out.println("afterCompletion=====");
     }
 }
