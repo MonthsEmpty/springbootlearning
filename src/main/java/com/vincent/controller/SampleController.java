@@ -18,4 +18,10 @@ public class SampleController {
         return "Hello World";
     }
 
+    @RequestMapping("/testResponseBody")
+    @ResponseBody
+    String testResponseBody(){
+        return "/ss/aa";
+    }
+
 }
