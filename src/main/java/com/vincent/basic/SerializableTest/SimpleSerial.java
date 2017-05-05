@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class SimpleSerial {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        File file = new File("person.out");
+       /* File file = new File("person.out");
         List<Child> list = new ArrayList<>();
         Child child = new Child();
         child.setGrade("5");
@@ -32,6 +32,6 @@ public class SimpleSerial {
         ObjectInputStream oin = new ObjectInputStream(new FileInputStream(file));
         Object newPerson = oin.readObject(); // 没有强制转换到Person类型
         oin.close();
-        System.out.println(newPerson);
+        System.out.println(newPerson);*/
     }
 }

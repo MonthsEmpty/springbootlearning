@@ -20,10 +20,10 @@ public class CDPlayerConfig {
         return new SgtPeppers();
     }
 
-    @Bean
+    /*@Bean
     public CDPlayer cdPlayer(){
         return new CDPlayer(sgtPeppers());//看起来，CompactDisc是通过调用sgtPeppers()得到的，但情况并非完全如此。因为sgtPeppers()方法上添加了@Bean注解，Spring将会拦截所有对它的调用，并确保直接返回该方法所创建的bean，而不是每次都对其进行实际的调用。
-    }
+    }*/
 
    /* @Bean
     //这个CDPlayer持有的SgtPeppers和上面一个CDPlayer是同一个

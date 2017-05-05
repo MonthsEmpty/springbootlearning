@@ -7,7 +7,7 @@ public class SimpleBeanOne {
     @SuppressWarnings("unchedked")
     @Deprecated
     @Override
-    @MyAnnotation
+    @MyAnnotation(key = "test")
     public String toString() {
         return "SimpleBeanOne{}";
     }

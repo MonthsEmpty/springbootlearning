@@ -1,5 +1,8 @@
 package com.vincent.basic.reflect;
 
+import com.vincent.aop.ReflectTest;
+
+import java.lang.annotation.Annotation;
 import java.lang.reflect.*;
 
 /**
@@ -8,7 +11,35 @@ import java.lang.reflect.*;
 public class Test {
 
     public static void main(String[] args) throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException, NoSuchFieldException {
-        testFields();
+        /*Class clazz = Class.forName("com.vincent.annotation.MyAnnotation");
+        Annotation[] annotations = clazz.getAnnotations();
+        for(Annotation annotation : annotations){
+            System.out.println(annotation.annotationType());
+            System.out.println(annotation.annotationType().getName());
+        }*/
+
+        ReflectTest reflectTest = new ReflectTest();
+        reflectTest.setSchool("nupt");
+//        reflectTest.setName("vincent");
+        System.out.println(reflectTest);
+
+        Class c = ReflectTest.class;
+        Field field = c.getDeclaredField("school");
+        Field field1 = c.getDeclaredField("name");
+        field.setAccessible(true);
+        field1.setAccessible(true);
+        System.out.println(field.get(reflectTest));
+        System.out.println(field1.get(reflectTest));
+
+
+
+
+
+
+
+
+
+
     }
 
     public static void testFields() throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchFieldException {

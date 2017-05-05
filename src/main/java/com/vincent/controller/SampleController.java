@@ -28,9 +28,16 @@ public class SampleController {
 
     @RequestMapping("/testSer")
     @ResponseBody
-    public String testSer(@RequestBody Student student){
+    public String testSer(Student student){
         System.out.println(student);
         return student == null ? "null" : student.getRealName();
     }
+
+    @RequestMapping("/testRequestBody")
+    @ResponseBody
+    public String testRequestBody(@RequestBody Student student){
+        return "aaa";
+    }
+
 }
 
